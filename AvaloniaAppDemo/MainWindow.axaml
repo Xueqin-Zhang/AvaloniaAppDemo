@@ -1,0 +1,57 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="AvaloniaAppDemo.MainWindow"
+        Title="AvaloniaAppDemo">
+    <Grid Background="{DynamicResource PrimaryBackground}" ColumnDefinitions="200, *">
+        <Border Classes="SideMenuBorder" Background="{DynamicResource PrimarySideMenuBackground}">
+            <Grid RowDefinitions="*, Auto">
+                <StackPanel Spacing="10">
+                    <Image Source=""></Image>
+                    <Button>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Classes="icon" Content="&#xe2c2;"></Label>
+                            <Label>Home</Label>
+                        </StackPanel>
+                    </Button>
+                    <Button>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Classes="icon" Content="&#xE572;"></Label>
+                            <Label>Process</Label>
+                        </StackPanel>
+                    </Button>
+                    <Button>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Classes="icon" Content="&#xE512;"></Label>
+                            <Label>Actions</Label>
+                        </StackPanel>
+                    </Button>
+                    <Button>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Classes="icon" Content="&#xEB96;"></Label>
+                            <Label>Macros</Label>
+                        </StackPanel>
+                    </Button>
+                    <Button>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Classes="icon" Content="&#xE9FC;"></Label>
+                            <Label>Reporter</Label>
+                        </StackPanel>
+                    </Button>
+                    <Button>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Classes="icon" Content="&#xE7B0;"></Label>
+                            <Label>History</Label>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+                
+                <Button Grid.Row="1" HorizontalAlignment="Left">
+                    <Label Classes="icon" Content="&#xE272;"></Label>
+                </Button>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
