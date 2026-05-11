@@ -11,6 +11,12 @@
     </Application.Styles>
 
     <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceInclude  Source="/Controls/IconButton.axaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+        
         <SolidColorBrush x:Key="PrimaryBackground" Color="#15172E"/>
         <SolidColorBrush x:Key="PrimaryForeground" Color="#ffffff"/>
         <LinearGradientBrush x:Key="PrimarySideMenuBackground" StartPoint="0,0" EndPoint="1,0">

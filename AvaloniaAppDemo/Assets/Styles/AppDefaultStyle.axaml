@@ -1,34 +1,39 @@
 <Styles xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:c="clr-namespace:AvaloniaAppDemo">
     <Design.PreviewWith>
-        <Button>
-            <StackPanel Orientation="Horizontal">
-                <Label Classes="icon" Content="&#xe2c2;"></Label>
-                <Label>Home</Label>
-            </StackPanel>
-        </Button>
+        <StackPanel Background="Gray">
+            <Border Padding="15">
+                <c:IconButton Content="Client me" Icon="&#xE512;"/>
+            </Border>
+        </StackPanel>
     </Design.PreviewWith>
-    
+
     <Style Selector="Border.SideMenuBorder">
         <Setter Property="Padding" Value="10, 20, 10, 20"></Setter>
     </Style>
-    
-    <!-- Add Styles Here -->
-    <Style Selector="Button">
+
+    <Style Selector=":is(Button)">
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
-        <Setter Property="Foreground" Value="{DynamicResource PrimaryForeground}"/>
-        <Setter Property="CornerRadius" Value="8"></Setter>
-        <Setter Property="Padding" Value="10, 10"></Setter>
-        <Setter Property="FontSize" Value="12"></Setter>
-        
+        <Setter Property="CornerRadius" Value="5"/>
+        <Setter Property="Foreground" Value="AliceBlue"></Setter>
+        <Setter Property="RenderTransform" Value="scale(1)"/>
     </Style>
-    
-    <Style Selector="Button:pointerover /template/ ContentPresenter">
-        <Setter Property="Foreground" Value="{DynamicResource PrimaryForeground}"></Setter>
+
+    <Style Selector=":is(Button) /template/ ContentPresenter">
+        <Setter Property="Transitions">
+            <Transitions>
+                <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.3" Easing="CubicEaseOut"/>
+                <BrushTransition Property="Background" Duration="0:0:0.3"/>
+                <BrushTransition Property="Foreground" Duration="0:0:0.2"/>
+                <CornerRadiusTransition Property="CornerRadius" Duration="0:0:0.2"/>
+            </Transitions>
+        </Setter>
     </Style>
-    
-    <Style Selector="Label.icon">
-        <Setter Property="FontFamily" Value="{DynamicResource Phosphor}"></Setter>
-        <Setter Property="Margin" Value="0,2,0,0"></Setter>
+    <Style Selector=":is(Button):pointerover /template/ ContentPresenter">
+        <Setter Property="Background" Value="Yellow"/>
+        <Setter Property="CornerRadius" Value="5"/>
+        <Setter Property="Foreground" Value="AliceBlue"></Setter>
+        <Setter Property="RenderTransform" Value="scale(1.1)"/>
     </Style>
 </Styles>
