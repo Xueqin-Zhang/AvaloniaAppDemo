@@ -17,8 +17,16 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
         
+        <Color x:Key="DefaultGradientStopColor">#333B5A</Color>
+        
         <SolidColorBrush x:Key="PrimaryBackground" Color="#15172E"/>
         <SolidColorBrush x:Key="PrimaryForeground" Color="#ffffff"/>
+        <SolidColorBrush x:Key="PrimaryForegroundSubtle" Color="#aaa"/>
+        <SolidColorBrush x:Key="PrimaryButtonBackgroundGradient" Color="AntiqueWhite"></SolidColorBrush>
+        
+        <SolidColorBrush x:Key="PrimaryHoverBackground" Color="{DynamicResource DefaultGradientStopColor}" />
+        <SolidColorBrush x:Key="PrimaryHoverForeground">White</SolidColorBrush>
+        
         <LinearGradientBrush x:Key="PrimarySideMenuBackground" StartPoint="0,0" EndPoint="1,0">
             <GradientStop Offset="0" Color="#131215"></GradientStop>
             <GradientStop Offset="1" Color="#141D3B"></GradientStop>
