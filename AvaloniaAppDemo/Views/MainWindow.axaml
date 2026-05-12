@@ -7,54 +7,28 @@
         x:Class="AvaloniaAppDemo.MainWindow"
         x:DataType="mv:MainWindowViewModel"
         Title="AvaloniaAppDemo">
-    
     <Grid Background="{DynamicResource PrimaryBackground}" ColumnDefinitions="200, *">
         <Border Classes="SideMenuBorder" Background="{DynamicResource PrimarySideMenuBackground}">
             <Grid RowDefinitions="*, Auto">
                 <StackPanel Spacing="10">
-                    <Image Source=""></Image>
-                    <Button>
-                        <StackPanel Orientation="Horizontal">
-                            <Label Classes="icon" Content="&#xe2c2;"></Label>
-                            <Label Content="{Binding Title}"></Label>
-                        </StackPanel>
-                    </Button>
-                    <Button>
-                        <StackPanel Orientation="Horizontal">
-                            <Label Classes="icon" Content="&#xE572;"></Label>
-                            <Label>Process</Label>
-                        </StackPanel>
-                    </Button>
-                    <Button>
-                        <StackPanel Orientation="Horizontal">
-                            <Label Classes="icon" Content="&#xE512;"></Label>
-                            <Label>Actions</Label>
-                        </StackPanel>
-                    </Button>
-                    <Button>
-                        <StackPanel Orientation="Horizontal">
-                            <Label Classes="icon" Content="&#xEB96;"></Label>
-                            <Label>Macros</Label>
-                        </StackPanel>
-                    </Button>
-                    <Button>
-                        <StackPanel Orientation="Horizontal">
-                            <Label Classes="icon" Content="&#xE9FC;"></Label>
-                            <Label>Reporter</Label>
-                        </StackPanel>
-                    </Button>
-                    <Button>
-                        <StackPanel Orientation="Horizontal">
-                            <Label Classes="icon" Content="&#xE7B0;"></Label>
-                            <Label>History</Label>
-                        </StackPanel>
-                    </Button>
+                    <Image Source="{SvgImage /Assets/Images/logo.svg}"></Image>
+                    <IconButton HorizontalAlignment="Stretch" Icon="&#xe2c2;" Content="Home"></IconButton>
+                    <IconButton HorizontalAlignment="Stretch" Icon="&#xe572;" Content="Actions"></IconButton>
+                    <IconButton HorizontalAlignment="Stretch" Icon="&#xe012;" Content="Macros"></IconButton>
+                    <IconButton HorizontalAlignment="Stretch" Icon="&#xe9fc;" Content="Reporter"></IconButton>
+                    <IconButton HorizontalAlignment="Stretch" Icon="&#xE7F4;" Content="History"></IconButton>
                 </StackPanel>
                 
                 <Button Grid.Row="1" HorizontalAlignment="Left">
-                    <Label Classes="icon" Content="&#xE272;"></Label>
+                    <Label Classes="icon" Content="&#xE270;"></Label>
                 </Button>
             </Grid>
         </Border>
+        
+        <Grid Column="1">
+            <Border Background="Gray">
+                <ContentControl Content="{Binding CurrentPage}"></ContentControl>
+            </Border>
+        </Grid>
     </Grid>
 </Window>

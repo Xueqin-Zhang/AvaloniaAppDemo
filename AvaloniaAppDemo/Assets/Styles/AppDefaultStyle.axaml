@@ -3,10 +3,10 @@
         xmlns:c="clr-namespace:AvaloniaAppDemo">
     <Design.PreviewWith>
         <StackPanel Background="{DynamicResource PrimaryBackground}" Spacing="5">
-            <c:IconButton Content="normal" Icon="&#xE512;"/>
-            <c:IconButton Content="normal" Classes="primary" Icon="&#xE512;"/>
-            <c:IconButton Content="subtle" Classes="subtle" Icon="&#xE512;"/>
-            <c:IconButton Content="Outline" Classes="outline" Icon="&#xE512;"/>
+            <IconButton Content="normal" Icon="&#xE512;"/>
+            <IconButton Content="normal" Classes="primary" Icon="&#xE512;"/>
+            <IconButton Content="subtle" Classes="subtle" Icon="&#xE512;"/>
+            <IconButton Content="Outline" Classes="outline" Icon="&#xE512;"/>
         </StackPanel>
     </Design.PreviewWith>
 
@@ -67,5 +67,9 @@
     <Style Selector=":is(Button).primary:pointerover /template/ ContentPresenter">
         <Setter Property="Foreground" Value="{DynamicResource PrimaryBackground}"></Setter>
         <Setter Property="Background" Value="{DynamicResource PrimaryHoverBackground}"></Setter>
+    </Style>
+    
+    <Style Selector="Label.icon">
+        <Setter Property="FontFamily" Value="{DynamicResource Phosphor}"></Setter>
     </Style>
 </Styles>

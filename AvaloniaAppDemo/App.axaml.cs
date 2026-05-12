@@ -1,9 +1,14 @@
+using System;
 using Avalonia;
+using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using Avalonia.Metadata;
+using AvaloniaAppDemo.ViewModel;
 using AvaloniaAppDemo.views;
+using AvaloniaAppDemo.Views.Pages;
 using Microsoft.Extensions.DependencyInjection;
-
+[assembly: XmlnsDefinition("https://github.com/avaloniaui", "AvaloniaAppDemo.Controls")]
 namespace AvaloniaAppDemo {
     public partial class App : Application {
         public override void Initialize()
@@ -15,6 +20,17 @@ namespace AvaloniaAppDemo {
         {
             var services = new ServiceCollection();
             AddServices(services);
+            
+            // 菜单路由部分
+            services.AddScoped<Func<Type, BasePageViewModel>>((sp) => (x) =>
+            {
+                return x switch
+                {
+                    _ when x == typeof(HomeViewModel) => sp.GetRequiredService<HomeViewModel>(),
+                    _ when x == typeof(HistoryViewModel) => sp.GetRequiredService<HistoryViewModel>(),
+                    _ => throw new ArgumentException($"未定义 {nameof(x)} ViewModel 类型")
+                };
+            });
             
             var serviceProvider = services.BuildServiceProvider();
             
@@ -29,6 +45,8 @@ namespace AvaloniaAppDemo {
         private void AddServices(IServiceCollection services)
         {
             services.AddSingleton<MainWindowViewModel>();
+            services.AddTransient<HomeViewModel>();
+            services.AddTransient<HistoryViewModel>();
         }
     }
 }

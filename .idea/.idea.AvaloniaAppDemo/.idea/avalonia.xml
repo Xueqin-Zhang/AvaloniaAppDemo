@@ -8,6 +8,12 @@
         <entry key="AvaloniaAppDemo/Controls/IconButton.axaml" value="AvaloniaAppDemo/AvaloniaAppDemo.csproj" />
         <entry key="AvaloniaAppDemo/MainWindow.axaml" value="AvaloniaAppDemo/AvaloniaAppDemo.csproj" />
         <entry key="AvaloniaAppDemo/Views/MainWindow.axaml" value="AvaloniaAppDemo/AvaloniaAppDemo.csproj" />
+        <entry key="AvaloniaAppDemo/Views/Pages/ActionsPage.axaml" value="AvaloniaAppDemo/AvaloniaAppDemo.csproj" />
+        <entry key="AvaloniaAppDemo/Views/Pages/History.axaml" value="AvaloniaAppDemo/AvaloniaAppDemo.csproj" />
+        <entry key="AvaloniaAppDemo/Views/Pages/HomePage.axaml" value="AvaloniaAppDemo/AvaloniaAppDemo.csproj" />
+        <entry key="AvaloniaAppDemo/Views/Pages/MacrosPage.axaml" value="AvaloniaAppDemo/AvaloniaAppDemo.csproj" />
+        <entry key="AvaloniaAppDemo/Views/Pages/Reporter.axaml" value="AvaloniaAppDemo/AvaloniaAppDemo.csproj" />
+        <entry key="AvaloniaAppDemo/Views/Pages/Settings/SettingPage.axaml" value="AvaloniaAppDemo/AvaloniaAppDemo.csproj" />
       </map>
     </option>
   </component>

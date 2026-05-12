@@ -2,7 +2,7 @@
 
 namespace AvaloniaAppDemo.ViewModel;
 
-public partial class BaseViewModel : ObservableObject
+public class BaseViewModel : ObservableObject
 {
     
 }

@@ -1,23 +1,22 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:controls="using:AvaloniaAppDemo"
+                    xmlns:controls="using:AvaloniaAppDemo.Controls"
                     xmlns:system="using:System">
 
     <Design.PreviewWith>
         <Border Padding="20">
             <StackPanel Spacing="20">
-                <controls:IconButton Icon="&#xE512;" Content="Click Me" />
-                <controls:IconButton Height="50" Width="150" Icon="&#xE512;" Content="Click Me" />
-                <controls:IconButton Classes="primary" Icon="&#xE512;" Content="Click Me" />
-                <controls:IconButton Classes="outlone" Icon="&#xE512;" Content="Click Me" />
-                <controls:IconButton Classes="warning" Icon="&#xE512;" Content="Click Me" />
-                <controls:IconButton Classes="success" Icon="&#xE512;" Content="Click Me!" />
-                <controls:IconButton Classes="error" Icon="&#xE512;" Content="Click Me!" />
+                <IconButton Icon="&#xE512;" Content="Click Me" />
+                <IconButton Height="50" Width="200" ContentAlign="Center" Icon="&#xE512;" Content="Click Me" />
+                <IconButton Classes="primary" Icon="&#xE4CC;" Content="Click Me" />
+                <IconButton Classes="outline" Icon="&#xE512;" Content="Click Me" />
+                <IconButton Classes="primary" Icon="&#xE512;" Content="Click Me" />
+                <IconButton Classes="subtle" Icon="&#xE512;" Content="Click Me!" />
             </StackPanel>
         </Border>
     </Design.PreviewWith>
 
-    <ControlTheme x:Key="{x:Type controls:IconButton}" TargetType="controls:IconButton">
+    <ControlTheme x:Key="{x:Type IconButton}" TargetType="IconButton">
         <Setter Property="Background" Value="{DynamicResource ButtonBackground}" />
         <Setter Property="Foreground" Value="{DynamicResource ButtonForeground}" />
         <Setter Property="BorderBrush" Value="{DynamicResource ButtonBorderBrush}" />
@@ -46,11 +45,10 @@
                                   VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}">
                     <ContentPresenter.ContentTemplate>
                         <DataTemplate x:DataType="x:Object">
-
                             <StackPanel Orientation="Horizontal"
-                                        HorizontalAlignment="Center"
+                                        HorizontalAlignment="{Binding $parent[IconButton].ContentAlign}"
                                         VerticalAlignment="Center">
-                                <Label Classes="icon" Content="{Binding $parent[controls:IconButton].Icon}" />
+                                <Label Classes="icon" Content="{Binding $parent[IconButton].Icon}" />
                                 <Label Content="{Binding}" />
                             </StackPanel>
                         </DataTemplate>
