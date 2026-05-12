@@ -22,14 +22,25 @@
         <SolidColorBrush x:Key="PrimaryBackground" Color="#15172E"/>
         <SolidColorBrush x:Key="PrimaryForeground" Color="#ffffff"/>
         <SolidColorBrush x:Key="PrimaryForegroundSubtle" Color="#aaa"/>
-        <SolidColorBrush x:Key="PrimaryButtonBackgroundGradient" Color="AntiqueWhite"></SolidColorBrush>
         
-        <SolidColorBrush x:Key="PrimaryHoverBackground" Color="{DynamicResource DefaultGradientStopColor}" />
+        <SolidColorBrush x:Key="PrimaryHoverBackground" Color="#ff00f1" />
         <SolidColorBrush x:Key="PrimaryHoverForeground">White</SolidColorBrush>
+        <SolidColorBrush x:Key="ButtonOutlineForeground">#00ffff</SolidColorBrush>
+        <SolidColorBrush x:Key="AlertButtonHoverBackground">#ffff00</SolidColorBrush>
+        <SolidColorBrush x:Key="NormalButtonHoverBackground">#aaa</SolidColorBrush>
         
         <LinearGradientBrush x:Key="PrimarySideMenuBackground" StartPoint="0,0" EndPoint="1,0">
             <GradientStop Offset="0" Color="#131215"></GradientStop>
             <GradientStop Offset="1" Color="#141D3B"></GradientStop>
+        </LinearGradientBrush>
+        
+        <LinearGradientBrush x:Key="PrimaryButtonBackgroundGradient" StartPoint="0%,0%" EndPoint="100%,0%">
+            <GradientStop Offset="0" Color="#00ffff"></GradientStop>
+            <GradientStop Offset="1" Color="#ff00f1"></GradientStop>
+        </LinearGradientBrush>
+        <LinearGradientBrush x:Key="AlertButtonBackgroundGradient" StartPoint="0%,0%" EndPoint="100%,0%">
+            <GradientStop Offset="0" Color="#ffff00"></GradientStop>
+            <GradientStop Offset="1" Color="#ff8800"></GradientStop>
         </LinearGradientBrush>
         
         <FontFamily x:Key="Phosphor">/Assets/Fonts/Phosphor.ttf#Phosphor</FontFamily>
