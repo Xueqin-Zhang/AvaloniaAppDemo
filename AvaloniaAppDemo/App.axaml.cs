@@ -4,9 +4,11 @@ using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using Avalonia.Metadata;
+using AvaloniaAppDemo.MainApp;
 using AvaloniaAppDemo.ViewModel;
 using AvaloniaAppDemo.views;
 using AvaloniaAppDemo.Views.Pages;
+using AvaloniaAppDemo.Views.Pages.Settings;
 using Microsoft.Extensions.DependencyInjection;
 [assembly: XmlnsDefinition("https://github.com/avaloniaui", "AvaloniaAppDemo.Controls")]
 namespace AvaloniaAppDemo {
@@ -28,6 +30,8 @@ namespace AvaloniaAppDemo {
                 {
                     _ when x == typeof(HomeViewModel) => sp.GetRequiredService<HomeViewModel>(),
                     _ when x == typeof(HistoryViewModel) => sp.GetRequiredService<HistoryViewModel>(),
+                    _ when x == typeof(ActionsViewModel) => sp.GetRequiredService<ActionsViewModel>(),
+                    _ when x == typeof(SettingsViewModel) => sp.GetRequiredService<SettingsViewModel>(),
                     _ => throw new ArgumentException($"未定义 {nameof(x)} ViewModel 类型")
                 };
             });
@@ -47,6 +51,10 @@ namespace AvaloniaAppDemo {
             services.AddSingleton<MainWindowViewModel>();
             services.AddTransient<HomeViewModel>();
             services.AddTransient<HistoryViewModel>();
+            services.AddTransient<ActionsViewModel>();
+            services.AddTransient<SettingsViewModel>();
+
+            services.AddSingleton<PageFactory>();
         }
     }
 }

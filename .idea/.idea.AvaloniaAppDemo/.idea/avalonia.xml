@@ -14,6 +14,7 @@
         <entry key="AvaloniaAppDemo/Views/Pages/MacrosPage.axaml" value="AvaloniaAppDemo/AvaloniaAppDemo.csproj" />
         <entry key="AvaloniaAppDemo/Views/Pages/Reporter.axaml" value="AvaloniaAppDemo/AvaloniaAppDemo.csproj" />
         <entry key="AvaloniaAppDemo/Views/Pages/Settings/SettingPage.axaml" value="AvaloniaAppDemo/AvaloniaAppDemo.csproj" />
+        <entry key="AvaloniaAppDemo/Views/Pages/Settings/SettingsPage.axaml" value="AvaloniaAppDemo/AvaloniaAppDemo.csproj" />
       </map>
     </option>
   </component>

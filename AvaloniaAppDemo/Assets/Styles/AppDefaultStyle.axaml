@@ -4,6 +4,7 @@
     <Design.PreviewWith>
         <StackPanel Background="{DynamicResource PrimaryBackground}" Spacing="5">
             <IconButton Content="normal" Icon="&#xE512;"/>
+            <IconButton Content="normal" Classes="isAction" Icon="&#xE512;"/>
             <IconButton Content="normal" Classes="primary" Icon="&#xE512;"/>
             <IconButton Content="subtle" Classes="subtle" Icon="&#xE512;"/>
             <IconButton Content="Outline" Classes="outline" Icon="&#xE512;"/>
@@ -25,6 +26,11 @@
         <Setter Property="Foreground" Value="{DynamicResource PrimaryForeground}"></Setter>
         <Setter Property="Background" Value="{DynamicResource PrimaryBackground}"></Setter>
     </Style>
+    
+    <Style Selector=":is(Button).isAction">
+        <Setter Property="Background" Value="{DynamicResource PrimaryHoverBackground}"></Setter>
+    </Style>
+    
     <Style Selector=":is(Button).primary">
         <Setter Property="Foreground" Value="{DynamicResource PrimaryBackground}"></Setter>
         <Setter Property="Background" Value="{DynamicResource PrimaryButtonBackgroundGradient}"></Setter>

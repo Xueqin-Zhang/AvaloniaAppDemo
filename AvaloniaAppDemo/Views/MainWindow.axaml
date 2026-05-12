@@ -3,30 +3,63 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:mv="clr-namespace:AvaloniaAppDemo.views"
+        xmlns:pages="clr-namespace:AvaloniaAppDemo.Views.Pages"
+        xmlns:settings="clr-namespace:AvaloniaAppDemo.Views.Pages.Settings"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="AvaloniaAppDemo.MainWindow"
         x:DataType="mv:MainWindowViewModel"
         Title="AvaloniaAppDemo">
+
+    <Design.DataContext>
+        <mv:MainWindowViewModel />
+    </Design.DataContext>
+
     <Grid Background="{DynamicResource PrimaryBackground}" ColumnDefinitions="200, *">
         <Border Classes="SideMenuBorder" Background="{DynamicResource PrimarySideMenuBackground}">
             <Grid RowDefinitions="*, Auto">
                 <StackPanel Spacing="10">
                     <Image Source="{SvgImage /Assets/Images/logo.svg}"></Image>
-                    <IconButton HorizontalAlignment="Stretch" Icon="&#xe2c2;" Content="Home"></IconButton>
-                    <IconButton HorizontalAlignment="Stretch" Icon="&#xe572;" Content="Actions"></IconButton>
-                    <IconButton HorizontalAlignment="Stretch" Icon="&#xe012;" Content="Macros"></IconButton>
-                    <IconButton HorizontalAlignment="Stretch" Icon="&#xe9fc;" Content="Reporter"></IconButton>
-                    <IconButton HorizontalAlignment="Stretch" Icon="&#xE7F4;" Content="History"></IconButton>
+                    <IconButton HorizontalAlignment="Stretch"
+                                Icon="&#xe2c2;"
+                                Content="Home"
+                                Classes.isAction="{Binding HomePageIsActive}"
+                                CommandParameter="{x:Type pages:HomeViewModel}"
+                                Command="{Binding GoPage}">
+                    </IconButton>
+                    <IconButton HorizontalAlignment="Stretch"
+                                Icon="&#xe572;"
+                                Content="Actions"
+                                Classes.isAction="{Binding ActionsPageIsActive}"
+                                CommandParameter="{x:Type pages:ActionsViewModel}"
+                                Command="{Binding GoPage}">
+                    </IconButton>
+                    <IconButton HorizontalAlignment="Stretch"
+                                Icon="&#xe012;"
+                                Content="Macros">
+                    </IconButton>
+                    <IconButton HorizontalAlignment="Stretch"
+                                Icon="&#xe9fc;"
+                                Content="Reporter">
+                    </IconButton>
+                    <IconButton HorizontalAlignment="Stretch"
+                                Icon="&#xE7F4;"
+                                Content="History">
+                    </IconButton>
                 </StackPanel>
-                
-                <Button Grid.Row="1" HorizontalAlignment="Left">
+
+                <Button Grid.Row="1" 
+                        Classes.isAction="{Binding SettingPageIsActive}"
+                        HorizontalAlignment="Left"
+                        CommandParameter="{x:Type settings:SettingsViewModel}"
+                        Command="{Binding GoPage}"
+                        >
                     <Label Classes="icon" Content="&#xE270;"></Label>
                 </Button>
             </Grid>
         </Border>
-        
+
         <Grid Column="1">
-            <Border Background="Gray">
+            <Border Background="Gray" >
                 <ContentControl Content="{Binding CurrentPage}"></ContentControl>
             </Border>
         </Grid>
