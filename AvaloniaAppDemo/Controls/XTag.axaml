@@ -1,0 +1,44 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="using:AvaloniaAppDemo.Controls">
+    <Design.PreviewWith>
+        <controls:XTag Content="你好"/>
+    </Design.PreviewWith>
+
+    <Style Selector="controls|XTag">
+        <!-- Set Defaults -->
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border Background="{DynamicResource BrandTertiaryColor}"
+                        Padding="8,3"
+                        CornerRadius="{DynamicResource CornerRadius}"
+                        BorderBrush="{DynamicResource BrandColor}"
+                        BorderThickness="1">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{TemplateBinding Content}" Foreground="{DynamicResource BrandColor}"/>
+                        <Label Classes="icon" Content="&#xE4F6;" Foreground="{DynamicResource BrandColor}"></Label>
+                    </StackPanel>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+        
+        <Style Selector="^:pointerover /template/ StackPanel Label.icon">
+            <Setter Property="Foreground" Value="{DynamicResource DangerSecondaryColor}"></Setter>
+            <Setter Property="Content" Value="&#xE4F8;"></Setter>
+            <Setter Property="FontWeight" Value="DemiBold"></Setter>
+        </Style>
+    
+        <Style Selector="^:pressed /template/ StackPanel Label.icon">
+            <Setter Property="Foreground" Value="{DynamicResource DangerColor}"></Setter>
+        </Style>
+    
+        <Style Selector="controls|XTag Label.icon">
+            <Setter Property="Transitions">
+                <Transitions>
+                    <BrushTransition Property="Foreground" Duration="0:0:0.3"></BrushTransition>
+                    <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.1"></TransformOperationsTransition>
+                </Transitions>
+            </Setter>
+        </Style>
+    </Style>
+</Styles>

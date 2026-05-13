@@ -18,14 +18,43 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceInclude  Source="/Controls/IconButton.axaml"/>
+                <ResourceInclude  Source="/Controls/Checkbox.axaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
         
         <Color x:Key="DefaultGradientStopColor">#333B5A</Color>
+        <Color x:Key="BrandColor">#409EFF</Color>
+        <Color x:Key="BrandSecondaryColor">#8CC5FF</Color>
+        <Color x:Key="BrandTertiaryColor">#A0CFFF</Color>
+        <Color x:Key="SuccessColor">#67C23A</Color>
+        <Color x:Key="SuccessSecondaryColor">#E1F3D8</Color>
+        <Color x:Key="WarningColor">#E6A23C</Color>
+        <Color x:Key="WarningSecondaryColor">#FAECD8</Color>
+        <Color x:Key="DangerColor">#F56C6C</Color>
+        <Color x:Key="DangerSecondaryColor">#FDE2E2</Color>
+        <Color x:Key="InfoColor">#909399</Color>
+        <Color x:Key="InfoSecondaryColor">#E9E9EB</Color>
+        <Color x:Key="PrimaryTextColor">#303133</Color>
+        <Color x:Key="NormalTextColor">#606266</Color>
+        <Color x:Key="SecondaryTextColor">#909399</Color>
+        <Color x:Key="PrimaryBorderColor">#DCDFE6</Color>
+        <Color x:Key="SecondBorderColor">#E4E7ED</Color>
+        <Color x:Key="TertiaryBorderColor">#EBEEF5</Color>
+        <Color x:Key="QuaternaryBorderColor">#F2F6FC</Color>
+        <Color x:Key="BaseBlackColor">#000000</Color>
+        <Color x:Key="BaseWhiteColor">#FFFFFF</Color>
+        <Color x:Key="Transparent">Transparent</Color>
+        
+        <CornerRadius x:Key="CornerRadius">6</CornerRadius>
         
         <SolidColorBrush x:Key="PrimaryBackground" Color="#15172E"/>
         <SolidColorBrush x:Key="PrimaryForeground" Color="#ffffff"/>
         <SolidColorBrush x:Key="PrimaryForegroundSubtle" Color="#aaa"/>
+        
+        <SolidColorBrush x:Key="NormalBackground" Color="#606266"></SolidColorBrush>
+        <SolidColorBrush x:Key="NormalForeground" Color="#FFFFFF"></SolidColorBrush>
+        <SolidColorBrush x:Key="NormalBorder" Color="#FFFFFF"></SolidColorBrush>
+        
         
         <SolidColorBrush x:Key="PrimaryHoverBackground" Color="#ff00f1" />
         <SolidColorBrush x:Key="PrimaryHoverForeground">White</SolidColorBrush>
