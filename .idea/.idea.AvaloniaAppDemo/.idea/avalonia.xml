@@ -5,6 +5,7 @@
       <map>
         <entry key="AvaloniaAppDemo/App.axaml" value="AvaloniaAppDemo/AvaloniaAppDemo.csproj" />
         <entry key="AvaloniaAppDemo/Assets/Styles/AppDefaultStyle.axaml" value="AvaloniaAppDemo/AvaloniaAppDemo.csproj" />
+        <entry key="AvaloniaAppDemo/Controls/Checkbox.axaml" value="AvaloniaAppDemo/AvaloniaAppDemo.csproj" />
         <entry key="AvaloniaAppDemo/Controls/IconButton.axaml" value="AvaloniaAppDemo/AvaloniaAppDemo.csproj" />
         <entry key="AvaloniaAppDemo/MainWindow.axaml" value="AvaloniaAppDemo/AvaloniaAppDemo.csproj" />
         <entry key="AvaloniaAppDemo/Views/MainWindow.axaml" value="AvaloniaAppDemo/AvaloniaAppDemo.csproj" />

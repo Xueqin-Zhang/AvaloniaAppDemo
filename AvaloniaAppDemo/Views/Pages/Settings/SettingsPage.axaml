@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:mv="clr-namespace:AvaloniaAppDemo.Views.Pages.Settings"
              mc:Ignorable="d"
-             d:DesignWidth="1024"
+             d:DesignWidth="1200"
              d:DesignHeight="800"
              x:DataType="mv:SettingsViewModel"
              Foreground="AliceBlue"

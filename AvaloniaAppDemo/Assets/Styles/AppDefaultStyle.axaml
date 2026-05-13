@@ -2,13 +2,22 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:c="clr-namespace:AvaloniaAppDemo">
     <Design.PreviewWith>
-        <StackPanel Background="{DynamicResource PrimaryBackground}" Spacing="5">
-            <IconButton Content="normal" Icon="&#xE512;"/>
-            <IconButton Content="normal" Classes="isAction" Icon="&#xE512;"/>
-            <IconButton Content="normal" Classes="primary" Icon="&#xE512;"/>
-            <IconButton Content="subtle" Classes="subtle" Icon="&#xE512;"/>
-            <IconButton Content="Outline" Classes="outline" Icon="&#xE512;"/>
-        </StackPanel>
+        <Border Background="{DynamicResource PrimaryBackground}">
+            <Grid ColumnDefinitions="Auto, Auto" Width="300">
+                <StackPanel  Spacing="12">
+                    <IconButton Content="normal" Icon="&#xE512;"/>
+                    <IconButton Content="normal" Classes="isAction" Icon="&#xE512;"/>
+                    <IconButton Content="normal" Classes="primary" Icon="&#xE512;"/>
+                    <IconButton Content="subtle" Classes="subtle" Icon="&#xE512;"/>
+                    <IconButton Content="Outline" Classes="outline" Icon="&#xE512;"/>
+                </StackPanel>
+                
+                <StackPanel Grid.Column="1">
+                    <CheckBox>后选课</CheckBox>
+                </StackPanel>
+            </Grid>
+        </Border>
+        
     </Design.PreviewWith>
 
     <Style Selector="Border.SideMenuBorder">
