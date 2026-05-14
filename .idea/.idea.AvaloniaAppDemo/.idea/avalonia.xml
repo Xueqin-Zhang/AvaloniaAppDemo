@@ -9,6 +9,10 @@
         <entry key="AvaloniaAppDemo/Controls/IconButton.axaml" value="AvaloniaAppDemo/AvaloniaAppDemo.csproj" />
         <entry key="AvaloniaAppDemo/Controls/XTag.axaml" value="AvaloniaAppDemo/AvaloniaAppDemo.csproj" />
         <entry key="AvaloniaAppDemo/MainWindow.axaml" value="AvaloniaAppDemo/AvaloniaAppDemo.csproj" />
+        <entry key="AvaloniaAppDemo/Styles/Button.axaml" value="AvaloniaAppDemo/AvaloniaAppDemo.csproj" />
+        <entry key="AvaloniaAppDemo/Styles/Checkbox.axaml" value="AvaloniaAppDemo/AvaloniaAppDemo.csproj" />
+        <entry key="AvaloniaAppDemo/Styles/ChomBoxStyle.axaml" value="AvaloniaAppDemo/AvaloniaAppDemo.csproj" />
+        <entry key="AvaloniaAppDemo/Styles/General.axaml" value="AvaloniaAppDemo/AvaloniaAppDemo.csproj" />
         <entry key="AvaloniaAppDemo/Views/MainWindow.axaml" value="AvaloniaAppDemo/AvaloniaAppDemo.csproj" />
         <entry key="AvaloniaAppDemo/Views/Pages/ActionsPage.axaml" value="AvaloniaAppDemo/AvaloniaAppDemo.csproj" />
         <entry key="AvaloniaAppDemo/Views/Pages/History.axaml" value="AvaloniaAppDemo/AvaloniaAppDemo.csproj" />

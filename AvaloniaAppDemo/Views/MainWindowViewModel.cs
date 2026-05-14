@@ -19,9 +19,15 @@ public partial class MainWindowViewModel : BaseViewModel
     [NotifyPropertyChangedFor(nameof(SettingPageIsActive))]
     private BasePageViewModel _currentPage;
     
-    [ObservableProperty] private bool _expendSideMenu = true;
+    [ObservableProperty] 
+    [NotifyPropertyChangedFor(nameof(SideMenuWidth))]
+    [NotifyPropertyChangedFor(nameof(SideMenuIcon))]
+    private bool _expendSideMenu = false;
     
     private readonly PageFactory _pageFactory;
+
+    public double SideMenuWidth => ExpendSideMenu == true ? 200 : 40;
+    public string SideMenuIcon => ExpendSideMenu ? "\\uea1c" : "\\uea2c";
 
     public bool HomePageIsActive => CurrentPage.PageName == "Home";
     public bool ActionsPageIsActive => CurrentPage.PageName == "Actions";
@@ -45,5 +51,11 @@ public partial class MainWindowViewModel : BaseViewModel
     public void GoPage(Type pageType)
     {
         CurrentPage = _pageFactory.GetPageViewModel(pageType);
+    }
+
+    [RelayCommand]
+    public void ToogleSideMenu()
+    {
+        ExpendSideMenu = !ExpendSideMenu;
     }
 }

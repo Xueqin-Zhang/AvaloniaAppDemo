@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     x:ClassModifier="internal">
   <Design.PreviewWith>
-    <Border Padding="20" Background="{DynamicResource PrimaryBackground}" Width="300">
+    <Border Padding="20" Background="{DynamicResource PrimaryBackgroundColor}" Width="300">
       <StackPanel Spacing="20">
         <CheckBox></CheckBox>
         <CheckBox IsChecked="True"></CheckBox>
@@ -23,9 +23,9 @@
     <Setter Property="VerticalContentAlignment" Value="Center" />
     <Setter Property="CornerRadius" Value="7" />
     <Setter Property="MinHeight" Value="{DynamicResource CheckBoxMinHeight}" />
-    <Setter Property="Foreground" Value="{DynamicResource PrimaryForeground}" />
+    <Setter Property="Foreground" Value="{DynamicResource PrimaryForegroundColor}" />
     <Setter Property="Background" Value="{DynamicResource CheckBoxBackgroundUnchecked}" />
-    <Setter Property="BorderBrush" Value="{DynamicResource PrimaryButtonBackgroundGradient}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource PrimaryGradient}" />
     <Setter Property="Template">
       <ControlTemplate>
         <Grid x:Name="RootGrid" ColumnDefinitions="30,*">
@@ -40,7 +40,7 @@
                     Width="30" />
 
             <Label x:Name="CheckGlyph" Opacity="1" 
-                   Foreground="{DynamicResource PrimaryBackground}"
+                   Foreground="{DynamicResource PrimaryBackgroundColor}"
                    FontFamily="{DynamicResource Phosphor}" Content="&#xEBA6;" VerticalAlignment="Center" HorizontalAlignment="Center"></Label>
           </Grid>
           <ContentPresenter x:Name="PART_ContentPresenter"
@@ -62,7 +62,7 @@
     <!-- Unchecked PointerOver State -->
     <Style Selector="^:pointerover">
       <Style Selector="^ /template/ Border#NormalRectangle">
-        <Setter Property="BorderBrush" Value="{DynamicResource ButtonOutlineForeground}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource HoverBackgroundColor}" />
       </Style>
 
       <Style Selector="^ /template/ Path#CheckGlyph">
@@ -74,6 +74,7 @@
     <Style Selector="^:pressed">
       <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
         <Setter Property="Foreground" Value="{DynamicResource CheckBoxForegroundUncheckedPressed}" />
+        <Setter Property="Background" Value="Transparent"></Setter>
       </Style>
 
       <Style Selector="^ /template/ Border#NormalRectangle">
@@ -110,23 +111,12 @@
 
       <Style Selector="^ /template/ Path#CheckGlyph">
         <Setter Property="Fill" Value="{DynamicResource CheckBoxCheckGlyphForegroundChecked}" />
-        <Setter Property="Data" Value="{StaticResource CheckMarkPathData}" />
         <Setter Property="Width" Value="9" />
         <Setter Property="Opacity" Value="1" />
       </Style>
 
       <!-- Checked PointerOver State -->
       <Style Selector="^:pointerover">
-        <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
-          <Setter Property="Foreground" Value="{DynamicResource CheckBoxForegroundCheckedPointerOver}" />
-        </Style>
-        
-
-        <Style Selector="^ /template/ Border#NormalRectangle">
-          <Setter Property="BorderBrush" Value="{DynamicResource CheckBoxCheckBackgroundStrokeCheckedPointerOver}" />
-          <Setter Property="Background" Value="{DynamicResource CheckBoxCheckBackgroundFillCheckedPointerOver}" />
-        </Style>
-
         <Style Selector="^ /template/ Path#CheckGlyph">
           <Setter Property="Fill" Value="{DynamicResource CheckBoxCheckGlyphForegroundCheckedPointerOver}" />
         </Style>
@@ -179,13 +169,9 @@
 
       <!-- Indeterminate PointerOver State -->
       <Style Selector="^:pointerover">
-        <Style Selector="^ /template/ ContentPresenter#PART_ContentPresenter">
-          <Setter Property="Foreground" Value="{DynamicResource CheckBoxForegroundIndeterminatePointerOver}" />
-        </Style>
 
         <Style Selector="^ /template/ Border#NormalRectangle">
           <Setter Property="BorderBrush" Value="{DynamicResource CheckBoxCheckBackgroundStrokeIndeterminatePointerOver}" />
-          <Setter Property="Background" Value="{DynamicResource CheckBoxCheckBackgroundFillIndeterminatePointerOver}" />
         </Style>
 
         <Style Selector="^ /template/ Path#CheckGlyph">

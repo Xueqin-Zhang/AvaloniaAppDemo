@@ -12,6 +12,7 @@
                 <IconButton Classes="outline" Icon="&#xE512;" Content="Click Me" />
                 <IconButton Classes="primary" Icon="&#xE512;" Content="Click Me" />
                 <IconButton Classes="subtle" Icon="&#xE512;" Content="Click Me!" />
+                <IconButton Classes="subtle" Icon="&#xE512;" Content="" Width="40" />
             </StackPanel>
         </Border>
     </Design.PreviewWith>
@@ -48,8 +49,8 @@
                             <StackPanel Orientation="Horizontal"
                                         HorizontalAlignment="{Binding $parent[IconButton].ContentAlign}"
                                         VerticalAlignment="Center">
-                                <Label Classes="icon" Content="{Binding $parent[IconButton].Icon}" />
-                                <Label Content="{Binding}" />
+                                <Label Classes="icon" Content="{Binding $parent[IconButton].Icon}"  VerticalAlignment="Center"/>
+                                <Label Content="{Binding}"  VerticalAlignment="Center"/>
                             </StackPanel>
                         </DataTemplate>
                     </ContentPresenter.ContentTemplate>

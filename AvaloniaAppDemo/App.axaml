@@ -3,79 +3,59 @@
              x:Class="AvaloniaAppDemo.App"
              xmlns:local="clr-namespace:AvaloniaAppDemo"
              RequestedThemeVariant="Default">
-             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+    <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
     <Application.Styles>
         <FluentTheme />
-        <StyleInclude Source="/Assets/Styles/AppDefaultStyle.axaml"></StyleInclude>
+        <StyleInclude Source="/Styles/General.axaml"></StyleInclude>
+        <StyleInclude Source="/Styles/Button.axaml"></StyleInclude>
+        <StyleInclude Source="/Styles/ChomBoxStyle.axaml"></StyleInclude>
     </Application.Styles>
 
     <Application.DataTemplates>
         <local:ViewLocator></local:ViewLocator>
     </Application.DataTemplates>
-             
+
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceInclude  Source="/Controls/IconButton.axaml"/>
-                <ResourceInclude  Source="/Controls/Checkbox.axaml"/>
+                <ResourceInclude Source="/Controls/IconButton.axaml" />
+                <ResourceInclude Source="/Controls/Checkbox.axaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
+
+        <FontFamily x:Key="Phosphor">/Assets/Fonts/Phosphor.ttf#Phosphor</FontFamily>
+
+        <Color x:Key="PrimaryForegroundColor">#D3D3D3</Color>
+        <Color x:Key="PrimaryForegroundSubtleColor">#9292A2</Color>
+        <Color x:Key="PrimaryBackgroundColor">#151E3C</Color>
+        <Color x:Key="WarningBackgroundColor">#FEF906</Color>
+        <Color x:Key="HoverBackgroundColor">#6138CB</Color>
+        <Color x:Key="HoverDangerBackgroundColor">#EA0CF0</Color>
         
-        <Color x:Key="DefaultGradientStopColor">#333B5A</Color>
-        <Color x:Key="BrandColor">#409EFF</Color>
-        <Color x:Key="BrandSecondaryColor">#8CC5FF</Color>
-        <Color x:Key="BrandTertiaryColor">#A0CFFF</Color>
-        <Color x:Key="SuccessColor">#67C23A</Color>
-        <Color x:Key="SuccessSecondaryColor">#E1F3D8</Color>
-        <Color x:Key="WarningColor">#E6A23C</Color>
-        <Color x:Key="WarningSecondaryColor">#FAECD8</Color>
-        <Color x:Key="DangerColor">#F56C6C</Color>
-        <Color x:Key="DangerSecondaryColor">#FDE2E2</Color>
-        <Color x:Key="InfoColor">#909399</Color>
-        <Color x:Key="InfoSecondaryColor">#E9E9EB</Color>
-        <Color x:Key="PrimaryTextColor">#303133</Color>
-        <Color x:Key="NormalTextColor">#606266</Color>
-        <Color x:Key="SecondaryTextColor">#909399</Color>
-        <Color x:Key="PrimaryBorderColor">#DCDFE6</Color>
-        <Color x:Key="SecondBorderColor">#E4E7ED</Color>
-        <Color x:Key="TertiaryBorderColor">#EBEEF5</Color>
-        <Color x:Key="QuaternaryBorderColor">#F2F6FC</Color>
-        <Color x:Key="BaseBlackColor">#000000</Color>
-        <Color x:Key="BaseWhiteColor">#FFFFFF</Color>
-        <Color x:Key="Transparent">Transparent</Color>
         
+        <x:Double x:Key="FirstFontSize">32</x:Double>
+        <x:Double x:Key="SecondaryFontSize">24</x:Double>
+        <x:Double x:Key="SubtleFontSize">12</x:Double>
         <CornerRadius x:Key="CornerRadius">6</CornerRadius>
         
-        <SolidColorBrush x:Key="PrimaryBackground" Color="#15172E"/>
-        <SolidColorBrush x:Key="PrimaryForeground" Color="#ffffff"/>
-        <SolidColorBrush x:Key="PrimaryForegroundSubtle" Color="#aaa"/>
+        <x:Double x:Key="ButtonBorderThickness">4</x:Double>
         
-        <SolidColorBrush x:Key="NormalBackground" Color="#606266"></SolidColorBrush>
-        <SolidColorBrush x:Key="NormalForeground" Color="#FFFFFF"></SolidColorBrush>
-        <SolidColorBrush x:Key="NormalBorder" Color="#FFFFFF"></SolidColorBrush>
-        
-        
-        <SolidColorBrush x:Key="PrimaryHoverBackground" Color="#ff00f1" />
-        <SolidColorBrush x:Key="PrimaryHoverForeground">White</SolidColorBrush>
-        <SolidColorBrush x:Key="ButtonOutlineForeground">#00ffff</SolidColorBrush>
-        <SolidColorBrush x:Key="AlertButtonHoverBackground">#ffff00</SolidColorBrush>
-        <SolidColorBrush x:Key="NormalButtonHoverBackground">#aaa</SolidColorBrush>
-        
-        <LinearGradientBrush x:Key="PrimarySideMenuBackground" StartPoint="0,0" EndPoint="1,0">
-            <GradientStop Offset="0" Color="#131215"></GradientStop>
-            <GradientStop Offset="1" Color="#141D3B"></GradientStop>
+        <LinearGradientBrush x:Key="NormalGradient" StartPoint="0%,0%" EndPoint="100%, 0%">
+            <GradientStop Offset="0" Color="#151E3C"></GradientStop>
+            <GradientStop Offset="1" Color="#9292A2"></GradientStop>
         </LinearGradientBrush>
-        
-        <LinearGradientBrush x:Key="PrimaryButtonBackgroundGradient" StartPoint="0%,0%" EndPoint="100%,0%">
+        <LinearGradientBrush x:Key="PrimaryGradient" StartPoint="0%,0%" EndPoint="100%, 0%">
             <GradientStop Offset="0" Color="#00ffff"></GradientStop>
             <GradientStop Offset="1" Color="#ff00f1"></GradientStop>
         </LinearGradientBrush>
-        <LinearGradientBrush x:Key="AlertButtonBackgroundGradient" StartPoint="0%,0%" EndPoint="100%,0%">
-            <GradientStop Offset="0" Color="#ffff00"></GradientStop>
-            <GradientStop Offset="1" Color="#ff8800"></GradientStop>
+        <LinearGradientBrush x:Key="WarningGradient" StartPoint="0%,0%" EndPoint="100%, 0%">
+            <GradientStop Offset="0" Color="#FEF906"></GradientStop>
+            <GradientStop Offset="1" Color="#F18F10"></GradientStop>
         </LinearGradientBrush>
-        
-        <FontFamily x:Key="Phosphor">/Assets/Fonts/Phosphor.ttf#Phosphor</FontFamily>
+        <LinearGradientBrush x:Key="SuccessGradient" StartPoint="0%,0%" EndPoint="100%, 0%">
+            <GradientStop Offset="0" Color="#55CB18"></GradientStop>
+            <GradientStop Offset="1" Color="#2D8539"></GradientStop>
+        </LinearGradientBrush>
     </Application.Resources>
 </Application>
