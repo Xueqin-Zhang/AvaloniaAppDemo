@@ -16,11 +16,15 @@
                 <Button Classes="isActive">
                     <Label Classes="icon" Content="&#xE512;"></Label>
                 </Button>
+                
+                <Button Classes="small">
+                    <Label Classes="icon icon-only" FontSize="12" Content="&#xE512;"></Label>
+                </Button>
             </StackPanel>
         </Border>
     </Design.PreviewWith>
      <Style Selector=":is(Button)">
-        <Setter Property="FontSize" Value="14"></Setter>
+        <Setter Property="FontSize" Value="12"></Setter>
         <Setter Property="CornerRadius" Value="{DynamicResource CornerRadius}"></Setter>
         <Setter Property="Padding" Value="9,5.5,9.2,5.5"></Setter>
         <Setter Property="FontWeight" Value="Black"></Setter>
@@ -34,6 +38,15 @@
     <Style Selector=":is(Button).isActive">
         <Setter Property="Background" Value="{DynamicResource HoverBackgroundColor}"></Setter>
     </Style>
+    
+    
+    <Style Selector=":is(Button).small">
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryForegroundColor}"></Setter>
+        <Setter Property="Background" Value="#15172E"></Setter>
+        <Setter Property="Padding" Value="5, 3"></Setter>
+        <Setter Property="FontSize" Value="9"></Setter>
+    </Style>
+    
     <Style Selector=":is(Button).primary">
         <Setter Property="Foreground" Value="{DynamicResource PrimaryBackgroundColor}"></Setter>
         <Setter Property="Background" Value="{DynamicResource PrimaryGradient}"></Setter>

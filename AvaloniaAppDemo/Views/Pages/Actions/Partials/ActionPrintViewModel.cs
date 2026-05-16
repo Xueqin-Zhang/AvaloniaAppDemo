@@ -1,6 +1,10 @@
-﻿namespace AvaloniaAppDemo.Views.Pages.Actions.Partials;
+﻿using AvaloniaAppDemo.ViewModel;
+using CommunityToolkit.Mvvm.ComponentModel;
 
-public class ActionPrintViewModel
+namespace AvaloniaAppDemo.Views.Pages.Actions.Partials;
+
+public partial class ActionPrintViewModel : BaseViewModel
 {
-    
+    [ObservableProperty] private string _id = "";
+    [ObservableProperty] private string _jobName = "";
 }

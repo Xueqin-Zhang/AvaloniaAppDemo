@@ -1,9 +1,8 @@
 using Avalonia.Controls;
-using Avalonia.Input;
 using Avalonia.Interactivity;
 using AvaloniaAppDemo.views;
 
-namespace AvaloniaAppDemo; 
+namespace AvaloniaAppDemo.Views;
 public partial class MainWindow : Window {
     public MainWindow()
     {

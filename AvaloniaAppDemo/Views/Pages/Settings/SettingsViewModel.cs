@@ -2,7 +2,7 @@
 
 namespace AvaloniaAppDemo.Views.Pages.Settings;
 
-public class SettingsViewModel : BasePageViewModel
+public class SettingsViewModel : PageViewModel
 {
     public SettingsViewModel(){}
 }

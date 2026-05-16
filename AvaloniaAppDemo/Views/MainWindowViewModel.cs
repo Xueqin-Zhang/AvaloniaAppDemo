@@ -17,7 +17,7 @@ public partial class MainWindowViewModel : BaseViewModel
     [NotifyPropertyChangedFor(nameof(HomePageIsActive))]
     [NotifyPropertyChangedFor(nameof(ActionsPageIsActive))]
     [NotifyPropertyChangedFor(nameof(SettingPageIsActive))]
-    private BasePageViewModel _currentPage;
+    private PageViewModel _currentPage;
     
     [ObservableProperty] 
     [NotifyPropertyChangedFor(nameof(SideMenuWidth))]
@@ -46,6 +46,8 @@ public partial class MainWindowViewModel : BaseViewModel
         CurrentPage = new SettingsViewModel();
         CurrentPage.PageName = "Settings";
     }
+    
+    
     
     [RelayCommand]
     public void GoPage(Type pageType)

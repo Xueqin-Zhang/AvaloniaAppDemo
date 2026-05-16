@@ -10,7 +10,7 @@
                 <Label Classes="h1">Header 1</Label>
                 <Label Classes="h2">Header 2</Label>
                 <Label Classes="sub1">Sub header 1</Label>
-                <Label Classes="sub2">Sub header 2</Label>
+                <Label Classes="sub2">Sub header 233</Label>
                 <Label Classes="sub1 success">Sub header 1 Success</Label>
                 <Label Classes="h1 success">Header 1 Success</Label>
                 <Label Classes="icon-only">&#xE3E8;</Label>
@@ -27,6 +27,7 @@
     <Style Selector="Label.h2">
         <Setter Property="Padding" Value="0 0 8 0" />
         <Setter Property="FontSize" Value="20" />
+        <Setter Property="Margin" Value="0, 6"></Setter>
     </Style>
 
     <Style Selector="Label.sub1">
@@ -62,5 +63,10 @@
     </Style>
     <Style Selector="Label.icon">
         <Setter Property="FontFamily" Value="{DynamicResource Phosphor}"></Setter>
+    </Style>
+    
+    <Style Selector="TextBlock.info">
+        <Setter Property="FontSize" Value="12"></Setter>
+        <Setter Property="Foreground" Value="#6D707D"></Setter>
     </Style>
 </Styles>

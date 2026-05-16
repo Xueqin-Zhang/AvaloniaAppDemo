@@ -2,7 +2,7 @@
 
 namespace AvaloniaAppDemo.Views.Pages;
 
-public partial class HistoryViewModel : BasePageViewModel
+public partial class HistoryViewModel : PageViewModel
 {
     
 }

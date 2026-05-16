@@ -7,7 +7,9 @@ using Avalonia.Metadata;
 using AvaloniaAppDemo.MainApp;
 using AvaloniaAppDemo.ViewModel;
 using AvaloniaAppDemo.views;
+using AvaloniaAppDemo.Views;
 using AvaloniaAppDemo.Views.Pages;
+using AvaloniaAppDemo.Views.Pages.Actions;
 using AvaloniaAppDemo.Views.Pages.Settings;
 using Microsoft.Extensions.DependencyInjection;
 [assembly: XmlnsDefinition("https://github.com/avaloniaui", "AvaloniaAppDemo.Controls")]
@@ -24,7 +26,7 @@ namespace AvaloniaAppDemo {
             AddServices(services);
             
             // 菜单路由部分
-            services.AddScoped<Func<Type, BasePageViewModel>>((sp) => (x) =>
+            services.AddScoped<Func<Type, PageViewModel>>((sp) => (x) =>
             {
                 return x switch
                 {

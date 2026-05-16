@@ -1,35 +1,39 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <OutputType>WinExe</OutputType>
     <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="11.3.14" />
-    <PackageReference Include="Avalonia.Desktop" Version="11.3.14" />
-    <PackageReference Include="Avalonia.Svg" Version="11.3.0" />
-    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.3.14" />
-    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.3.14" />
-    <PackageReference Include="AvaloniaUI.DiagnosticsSupport" Version="2.2.1">
-      <IncludeAssets Condition="'$(Configuration)' != 'Debug'">None</IncludeAssets>
-      <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
-    </PackageReference>
-    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.7" />
+    <PackageReference Include="Avalonia"/>
+    <PackageReference Include="Avalonia.Desktop" />
+    <PackageReference Include="Avalonia.Svg.Skia" />
+    <PackageReference Include="Avalonia.Themes.Fluent" />
+    <PackageReference Include="Avalonia.Fonts.Inter" />
+    <PackageReference Include="CommunityToolkit.Mvvm" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="Assets\Fonts\Phosphor.ttf" />
-    <AvaloniaResource Include="Assets\Fonts\Phosphor.ttf" />
+    <AvaloniaResource Include="Assets\Fonts\Phosphor.ttf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
     <None Remove="Assets\Images\icon.svg" />
-    <AvaloniaResource Include="Assets\Images\icon.svg" />
+    <AvaloniaResource Include="Assets\Images\icon.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
     <None Remove="Assets\Images\logo.svg" />
-    <AvaloniaResource Include="Assets\Images\logo.svg" />
+    <AvaloniaResource Include="Assets\Images\logo.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
     <None Remove="Assets\Images\background-settings.svg" />
-    <AvaloniaResource Include="Assets\Images\background-settings.svg" />
+    <AvaloniaResource Include="Assets\Images\background-settings.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaResource>
+    <None Remove="Assets\Images\background-actions.svg" />
+    <AvaloniaResource Include="Assets\Images\background-actions.svg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -37,5 +41,24 @@
       <DependentUpon>MainWindow.axaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Pages\Actions\ActionsPage.axaml.cs">
+      <DependentUpon>ActionsPage.axaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <AvaloniaXaml Update="Styles\Button.axaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaXaml>
+    <AvaloniaXaml Update="Styles\ChomBoxStyle.axaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaXaml>
+    <AvaloniaXaml Update="Styles\General.axaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaXaml>
+    <AvaloniaXaml Update="Assets\Styles\AppDefaultStyle.axaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AvaloniaXaml>
   </ItemGroup>
 </Project>

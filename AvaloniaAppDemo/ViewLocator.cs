@@ -6,7 +6,9 @@ using AvaloniaAppDemo.ViewModel;
 namespace AvaloniaAppDemo;
 
 public class ViewLocator : IDataTemplate
-{
+{ 
+
+    public bool Match(object? data) => data is PageViewModel;
     public Control? Build(object? param)
     {
         if (param is null) return null;
@@ -20,15 +22,12 @@ public class ViewLocator : IDataTemplate
             return null;
         }
 
-        if (param is BasePageViewModel viewModel)
+        if (param is PageViewModel viewModel)
         {
             viewModel.PageName = param.GetType().Name.Replace("ViewModel", "", StringComparison.CurrentCultureIgnoreCase);
         }
-        
         var control = (Control)Activator.CreateInstance(type)!;
         control.DataContext = param;
         return control;
     }
-
-    public bool Match(object? data) => data is BasePageViewModel;
 }

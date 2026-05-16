@@ -6,7 +6,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace AvaloniaAppDemo.Views.Pages;
 
-public partial class HomeViewModel : BasePageViewModel
+public partial class HomeViewModel : PageViewModel
 {
     private readonly TimeSpan _interval = TimeSpan.FromMilliseconds(500);
 
